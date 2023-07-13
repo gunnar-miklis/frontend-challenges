@@ -31,7 +31,7 @@ export default function App() {
 			<View style={styles.linkWrapper}>
 				<Text style={styles.muted}>Challenge by </Text>
 				<TouchableOpacity>
-					<Text style={styles.link} onPress={ () => Linking.openURL('https://www.frontendmentor.io?ref=challenge') }>
+					<Text style={styles.link} onPress={ () => Linking.openURL('https://www.frontendmentor.io/challenges/qr-code-component-iux_sIO_H') }>
 						Frontend Mentor
 					</Text>
 				</TouchableOpacity>
