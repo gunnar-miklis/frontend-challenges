@@ -1,0 +1,79 @@
+@font-face {
+	font-family: 'HankenGrotesk';
+	src: url('./assets/fonts/HankenGrotesk-VariableFont_wght.ttf');
+}
+
+:root {
+	font-family: 'HankenGrotesk';
+	font-weight: 500;
+	font-size: 16px;
+
+	--col-prim-red: hsl(0, 100%, 67%);
+	--col-prim-yellow: hsl(39, 100%, 56%);
+	--col-prim-teal: hsl(166, 100%, 37%);
+	--col-prim-blue: hsl(234, 85%, 45%);
+
+	--col-grad-slate: hsl(252, 100%, 67%); /* background */
+	--col-grad-royal: hsl(241, 81%, 54%); /* background */
+	--col-grad-violet: hsla(256, 72%, 46%, 1); /* circle */
+	--col-grad-persion: hsla(241, 72%, 46%, 0); /* circle */
+
+	--col-neutral-white: hsl(0, 0%, 100%);
+	--col-neutral-blue: hsl(221, 100%, 96%);
+	--col-neutral-lavender: hsl(241, 100%, 89%);
+	--col-neutral-gray: hsl(224, 30%, 27%);
+	
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-text-size-adjust: 100%;
+}
+
+#root,
+html,
+body,
+section,
+footer,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+span,
+button,
+img {
+	margin: 0;
+	padding: 0;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5 {
+	font-family: 'HankenGrotesk';
+
+	line-height: 0;
+	margin: 40px 0 20px;
+	padding: 5px;
+}
+p, 
+button {
+	font-family: 'HankenGrotesk';
+
+	margin: 5px 0;
+	padding: 5px;
+}
+.f-col {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+}
+.f-row {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+}

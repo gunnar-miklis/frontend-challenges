@@ -1,0 +1,148 @@
+div.component {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
+
+	background-color: var(--col-neutral-white);
+}
+
+section.result {
+	align-items: center;
+	background: linear-gradient( var(--col-grad-slate), var(--col-grad-royal));
+	border-bottom-left-radius: 30px;
+	border-bottom-right-radius: 30px;
+
+	padding: 10px 50px 40px;
+	text-align: center;
+
+	color: hsla(0, 0%, 100%, 0.5);
+}
+section.result h2 {
+	margin: 30px 0 10px;
+	color: hsla(0, 0%, 100%, 1);
+}
+section.result h4 {
+	margin: 30px 0;
+	font-size: 1.2rem;
+}
+section.result p {
+	color: hsla(0, 0%, 100%, 0.7);
+}
+
+div.score {
+	width: 150px;
+	height: 150px;
+	
+	align-items: center;
+	margin: 5px 0;
+
+	border-radius: 50%;
+	background: linear-gradient( var(--col-grad-violet), var(--col-grad-persion) );
+}
+
+div.score > p {
+	color: hsla(0, 0%, 100%, 0.4);
+}
+div.score > p > span {
+	font-size: 3.7rem;
+	font-weight: 800;
+	color: hsla(0, 0%, 100%, 1);
+}
+
+section.summary {
+	width: 80%;
+}
+.box {
+	justify-content: space-between;
+	width: 100%;
+	
+	border-radius: 15px;
+	
+	padding: 5px 15px;
+	margin: 10px 0;
+	
+	font-weight: 700;
+}
+.box img {
+	padding: 5px;
+}
+.box > p {
+	color: hsla(224, 30%, 27%, 0.4);
+}
+.box > p > span {
+	color: hsla(224, 30%, 27%, 1);
+}
+.bg-red {
+	color: var(--col-prim-red);
+	background-color: hsla(0, 100%, 67%, 0.1);
+}
+.bg-yellow {
+	color: var(--col-prim-yellow);
+	background-color: hsla(39, 100%, 56%, 0.1);	
+}
+.bg-teal {
+	color: var(--col-prim-teal);
+	background-color: hsla(166, 100%, 37%, 0.1);
+}
+.bg-blue {
+	color: var(--col-prim-blue);
+	background-color: hsla(234, 85%, 45%, 0.1);
+}
+
+
+section.summary button {
+	color: var(--col-neutral-white);
+	background-color: var(--col-neutral-gray);
+
+	border-radius: 30px;
+	border: none;
+
+	padding: 15px;
+	margin: 10px 0 40px;
+
+	font-weight: 700;
+	font-size: 1.1rem;
+	letter-spacing: 0.03rem;
+}
+
+footer {
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+
+	padding: 10px;
+
+	text-align: center;
+	font-size: 0.8rem;
+}
+
+@media (min-width: 601px) {
+	body {
+		min-height: 100vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	div.component {
+		flex-flow: row nowrap;
+		align-items: stretch;
+		box-shadow: 10px 10px 20px hsla(241, 81%, 54%, 0.1);
+		border-radius: 30px;
+		overflow: hidden;
+		max-width: 600px;
+	}
+	section.result {
+		width: 50%;
+		justify-content: space-between;
+		border-radius: 30px;
+	}
+	section.summary {
+		width: 50%;
+		justify-content: space-between;
+		padding: 0 20px;
+	}
+
+	
+}
