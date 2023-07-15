@@ -8,12 +8,17 @@
 $ npm create vite@latest
   or
 $ yarn create vite
-
+```
+```
 $ npm install
+  or
+$ yarn
 ```
 ### start
 ```
 $ npm run dev
+  or
+$ yarn dev
 ```
 
 ## result: desktop
