@@ -6,7 +6,7 @@ Recreate, Layout and Design frontend **components** using:
 + JavaScript, DOM Manipulation,
 + etc.
 
-### Completed
+### Examples: Some of my Completed Challenges
 <table>
   <tr>
     <td>
