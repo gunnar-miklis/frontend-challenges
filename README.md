@@ -1,7 +1,7 @@
 ## Practice. Learn. Improve: [Frontend Challenges](https://www.frontendmentor.io)
 Recreate, Layout and Design frontend **components** using: 
 + HTML, CSS (+ Bootstrap),
-+ React (+ Material Ui),
++ React (+ **[Material Ui](https://github.com/gunnar-miklis/intro-to-material-ui-react)** ),
 + React Native,
 + JavaScript, DOM Manipulation,
 + etc.
