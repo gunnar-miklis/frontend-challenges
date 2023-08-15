@@ -18,6 +18,9 @@ Recreate, Layout and Design frontend **components** using:
     <td>
       <img src="https://raw.githubusercontent.com/gunnar-miklis/frontend-challenges/main/summary-component/solutions/ViteReact/src/assets/demo/Screenshot%202023-07-13%20173324.png" width="500px" />
     </td>
+    <td>
+      <img src="https://raw.githubusercontent.com/gunnar-miklis/intro-to-material-ui-react/main/screenshots/Screenshot%202023-08-15%20163617.png" width="500px" />
+    </td>
   </tr>
 </table>
 
