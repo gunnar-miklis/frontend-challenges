@@ -1,35 +1,38 @@
 module.exports = {
-	env: {
-		browser: true,
-		es2021: true,
+	'env': {
+		'browser': true,
+		'es2021': true,
 	},
-	extends: [
+	'extends': [
 		'google',
 		'eslint:recommended',
 		'plugin:react/recommended',
 		'plugin:react/jsx-runtime',
 		'plugin:react-hooks/recommended',
 	],
-	overrides: [
+	'overrides': [
 		{
-			env: {
-				node: true,
+			'env': {
+				'node': true,
 			},
-			files: [ '.eslintrc.{js,cjs}' ],
-			parserOptions: {
-				sourceType: 'script',
+			'files': [
+				'.eslintrc.{js,cjs}',
+			],
+			'parserOptions': {
+				'sourceType': 'script',
 			},
 		},
 	],
-	parserOptions: {
-		ecmaVersion: 'latest',
-		sourceType: 'module',
+	'parserOptions': {
+		'ecmaVersion': 'latest',
+		'sourceType': 'module',
 	},
-	plugins: [ 'react' ],
-	rules: {
+	'plugins': [
+		'react',
+	],
+	'rules': {
 		'no-console': 'off',
 		'max-len': 'off',
-		// "arrow-parens": "off",
 		'space-in-parens': [
 			'error',
 			'always',
@@ -59,5 +62,7 @@ module.exports = {
 				},
 			},
 		],
+		'react/prop-types': 'off',
+		'operator-linebreak': 'off',
 	},
 };
