@@ -1,61 +1,105 @@
 import { createTheme } from '@mui/material';
 import '@fontsource/space-mono/700.css';
+import { styleGuide } from './styleGuide';
 
 export const theme = createTheme( {
 	components: {
+		MuiContainer: {
+			styleOverrides: {
+				root: {
+					display: 'flex',
+					justifyContent: 'center',
+					alignItems: 'center',
+					minHeight: '100vh',
+				},
+			},
+		},
+		MuiPaper: {
+			styleOverrides: {
+				root: {
+					borderRadius: 30,
+					padding: 40,
+				},
+			},
+		},
 		MuiFilledInput: {
 			styleOverrides: {
 				root: {
-					borderRadius: 7,
-					position: 'relative',
-					width: 'auto',
-					margin: '5px 0px',
-					marginBottom: 10,
-					backgroundColor: 'hsl(189, 41%, 97%)',
-					color: 'hsl(183, 100%, 15%)',
+					borderRadius: 5,
+					backgroundColor: styleGuide.colors.lightCyan,
+					color: styleGuide.colors.darkCyan,
+				},
+				input: {
+					margin: 0,
+					padding: 14,
+					textAlign: 'right',
+					fontSize: styleGuide.font.fontSize,
 				},
 			},
 		},
 		MuiInputLabel: {
 			styleOverrides: {
 				root: {
-					marginTop: 10,
+					color: styleGuide.colors.darkGrayishCyan,
+					marginBottom: 10,
 				},
 			},
 		},
 		MuiButton: {
 			styleOverrides: {
 				root: {
-					borderRadius: 7,
+					borderRadius: 5,
 					marginBottom: 10,
-					backgroundColor: 'hsl(183, 100%, 15%)',
+					backgroundColor: styleGuide.colors.darkCyan,
+					padding: 10,
+				},
+			},
+		},
+		MuiAlert: {
+			styleOverrides: {
+				root: {
+					fontSize: '1rem',
+					alignItems: 'center',
+					justifyContent: 'center',
+					backgroundColor: styleGuide.colors.darkCyan,
+					color: styleGuide.colors.lightCyan,
 				},
 			},
 		},
 	},
 	typography: {
 		allVariants: {
-			fontFamily: [ 'Space Mono', 'sans-serif' ].join( ',' ),
-			fontSize: 24,
-			fontWeight: 700,
-			textTransform: 'none',
-			color: 'hsl(186, 14%, 43%)',
+			fontFamily: styleGuide.font.fontFamily,
+			fontWeight: styleGuide.font.fontWeight,
+			fontSize: styleGuide.font.fontSize,
+		},
+		h2: {
+			padding: '50px 0 25px',
+			textAlign: 'center',
+			textTransform: 'uppercase',
+			letterSpacing: 10,
+			color: styleGuide.colors.darkGrayishCyan,
+		},
+		h3: {
+			fontSize: '2.5rem',
+			color: styleGuide.colors.main,
+		},
+		body1: {
+			fontSize: '0.9rem',
+			color: styleGuide.colors.white,
+		},
+		body2: {
+			fontSize: '0.8rem',
+			color: styleGuide.colors.grayishCyan,
 		},
 	},
 	palette: {
-		background: {
-			default: 'hsl(185, 41%, 84%)',
-		},
 		primary: {
-			main: 'hsl(172, 67%, 45%)',
-			contrastText: 'hsl(189, 41%, 97%)',
+			main: styleGuide.colors.main,
+			contrastText: styleGuide.colors.lightCyan,
 		},
-		mainAccent: 'hsl(172, 67%, 45%)',
-		darkCyan: 'hsl(183, 100%, 15%)',
-		darkGrayishCyan: 'hsl(186, 14%, 43%)',
-		grayishCyan: 'hsl(184, 14%, 56%)',
-		lightGrayishCyan: 'hsl(185, 41%, 84%)',
-		lightCyan: 'hsl(189, 41%, 97%)',
-		whiteText: 'hsl(0, 0%, 100%)',
+		background: {
+			default: styleGuide.colors.lightGrayishCyan,
+		},
 	},
 } );

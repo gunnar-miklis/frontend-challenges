@@ -1,18 +1,20 @@
 import iconDollar from './assets/icon-dollar.svg';
 import iconPerson from './assets/icon-person.svg';
+import CheckIcon from '@mui/icons-material/Check';
 import { useEffect, useState } from 'react';
 import {
 	Alert,
-	Box,
-	Button,
 	Container,
 	FilledInput,
 	Grid,
 	InputAdornment,
 	InputLabel,
+	Paper,
 	Snackbar,
 	Typography,
 } from '@mui/material';
+import CommonButton from './components/common/CommonButton/CommonButton';
+import { styleGuide } from './styleGuide';
 
 export default function App() {
 	const [ bill, setBill ] = useState( 0 );
@@ -53,181 +55,174 @@ export default function App() {
 
 	return (
 		<>
-			<Container maxWidth='sm'>
-				<Grid container justifyContent="center">
+			<Container maxWidth='md' disableGutters>
+				<Grid container direction='column' wrap='nowrap' rowSpacing={4}>
 
-					<Grid item>
-						<Typography variant='h1'>SPLITTER</Typography>
+					<Grid item xs={4}>
+						<Typography variant='h2'>Spli<br/>tter</Typography>
 					</Grid>
 
-					<Grid item>
+					<Grid item xs={8}>
+						<Paper elevation={5}>
+							<Grid container direction='row' wrap='wrap' spacing={5}>
 
-						<Grid item>
+								<Grid item xs={12} sm={12} md={6}>
 
-							<InputLabel htmlFor="input-with-icon-adornment">Bill</InputLabel>
-							<FilledInput
-								id="input-with-icon-adornment"
-								onChange={ ( e ) => e.target.value > 0 ? setBill( Number( e.target.value ) ) : setBill( 0 ) }
-								value={ bill > 0 ? bill : '' }
-								type='number'
-								disableUnderline
-								startAdornment={
-									<InputAdornment position="start">
-										<img src={iconDollar} alt='icon-dollar'/>
-									</InputAdornment>
-								}
-							/>
+									<Grid container direction='column' justifyContent='space-between' rowSpacing={4}>
+										<Grid item xs={12}>
+											<InputLabel htmlFor="bill">Bill</InputLabel>
+											<FilledInput
+												id='bill'
+												type='number'
+												disableUnderline
+												fullWidth
+												value={ bill > 0 ? bill : '' }
+												onChange={ ( e ) => e.target.value > 0 ? setBill( Number( e.target.value ) ) : setBill( 0 ) }
+												placeholder='0'
+												startAdornment={
+													<InputAdornment position="start">
+														<img src={iconDollar} alt='icon-dollar'/>
+													</InputAdornment>
+												}
+											/>
+										</Grid>
 
-							<InputLabel>Select Tip %</InputLabel>
-							<Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', width: '100%' }}>
-								{
-									tip === 5 ?
-										<Button
-											variant='contained'
-											sx={{ width: '45%', backgroundColor: 'mainAccent', color: 'darkCyan' }}
-											onClick={ () => handleTip( 5 ) }>
-										5%
-										</Button> :
-										<Button
-											variant='contained'
-											sx={{ width: '45%' }}
-											onClick={ () => handleTip( 5 ) }>
-										5%
-										</Button>
-								}
-								{
-									tip === 10 ?
-										<Button
-											variant='contained'
-											sx={{ width: '45%', backgroundColor: 'mainAccent', color: 'darkCyan' }}
-											onClick={ () => handleTip( 10 ) }>
-										10%
-										</Button> :
-										<Button
-											variant='contained'
-											sx={{ width: '45%' }}
-											onClick={ () => handleTip( 10 ) }>
-										10%
-										</Button>
-								}
-								{
-									tip === 15 ?
-										<Button
-											variant='contained'
-											sx={{ width: '45%', backgroundColor: 'mainAccent', color: 'darkCyan' }}
-											onClick={ () => handleTip( 15 ) }>
-										15%
-										</Button> :
-										<Button
-											variant='contained'
-											sx={{ width: '45%' }}
-											onClick={ () => handleTip( 15 ) }>
-										15%
-										</Button>
-								}
-								{
-									tip === 25 ?
-										<Button
-											variant='contained'
-											sx={{ width: '45%', backgroundColor: 'mainAccent', color: 'darkCyan' }}
-											onClick={ () => handleTip( 25 ) }>
-										25%
-										</Button> :
-										<Button
-											variant='contained'
-											sx={{ width: '45%' }}
-											onClick={ () => handleTip( 25 ) }>
-										25%
-										</Button>
-								}
-								{
-									tip === 50 ?
-										<Button
-											variant='contained'
-											sx={{ width: '45%', backgroundColor: 'mainAccent', color: 'darkCyan' }}
-											onClick={ () => handleTip( 50 ) }>
-										50%
-										</Button> :
-										<Button
-											variant='contained'
-											sx={{ width: '45%' }}
-											onClick={ () => handleTip( 50 ) }>
-										50%
-										</Button>
-								}
-								<FilledInput
-									type='nummber'
-									disableUnderline
-									sx={{ width: '45%' }}
-									placeholder='Custom'
-									onChange={ ( e ) => e.target.value > 0 ? setTip( Number( e.target.value ) ) : setTip( 0 ) } />
-							</Box>
+										<Grid item xs={12}>
+											<InputLabel>Select Tip %</InputLabel>
+											<Grid container direction='row' wrap='wrap' columnSpacing={2} justifyContent='space-between'>
+												<Grid item xs={6} sm={4}>
+													{
+														tip === 5 ?
+															<CommonButton title='5%' onClick={ () => handleTip( 5 ) } isActive/> :
+															<CommonButton title='5%' onClick={ () => handleTip( 5 ) } />
+													}
+												</Grid>
+												<Grid item xs={6} sm={4}>
+													{
+														tip === 10 ?
+															<CommonButton title='10%' onClick={ () => handleTip( 10 ) } isActive/> :
+															<CommonButton title='10%' onClick={ () => handleTip( 10 ) } />
+													}
+												</Grid>
+												<Grid item xs={6} sm={4}>
+													{
+														tip === 15 ?
+															<CommonButton title='15%' onClick={ () => handleTip( 15 ) } isActive/> :
+															<CommonButton title='15%' onClick={ () => handleTip( 15 ) } />
+													}
+												</Grid>
+												<Grid item xs={6} sm={4}>
+													{
+														tip === 25 ?
+															<CommonButton title='25%' onClick={ () => handleTip( 25 ) } isActive/> :
+															<CommonButton title='25%' onClick={ () => handleTip( 25 ) } />
+													}
+												</Grid>
+												<Grid item xs={6} sm={4}>
+													{
+														tip === 50 ?
+															<CommonButton title='50%' onClick={ () => handleTip( 50 ) } isActive/> :
+															<CommonButton title='50%' onClick={ () => handleTip( 50 ) } />
+													}
+												</Grid>
+												<Grid item xs={6} sm={4}>
+													<FilledInput
+														type='nummber'
+														disableUnderline
+														fullWidth
+														placeholder='Custom'
+														onChange={ ( e ) => e.target.value > 0 ? setTip( Number( e.target.value ) ) : setTip( 0 ) }
+														inputProps={{
+															style: {
+																textAlign: 'center',
+															},
+														}}
+													/>
+												</Grid>
+											</Grid>
+										</Grid>
 
-							<InputLabel htmlFor="input-with-icon-adornment">Number of People</InputLabel>
-							<FilledInput
-								id="input-with-icon-adornment"
-								onChange={ ( e ) => e.target.value > 0 ? setPeople( Number( e.target.value ) ) : setPeople( 0 ) }
-								value={ people > 0 ? people : '' }
-								type='number'
-								disableUnderline
-								startAdornment={
-									<InputAdornment position="start">
-										<img src={iconPerson} alt='icon-person'/>
-									</InputAdornment>
-								}
-							/>
+										<Grid item xs={12}>
+											<InputLabel htmlFor="number-of-people">Number of People</InputLabel>
+											<FilledInput
+												type='number'
+												disableUnderline
+												fullWidth
+												id="number-of-people"
+												value={ people > 0 ? people : '' }
+												onChange={ ( e ) => e.target.value > 0 ? setPeople( Number( e.target.value ) ) : setPeople( 0 ) }
+												placeholder='0'
+												startAdornment={
+													<InputAdornment position="start">
+														<img src={iconPerson} alt='icon-person'/>
+													</InputAdornment>
+												}
+											/>
+										</Grid>
 
-						</Grid>
+									</Grid>
+
+								</Grid>
 
 
-						<Grid item>
-							<Box sx={{ backgroundColor: 'darkCyan', color: 'lightGrayishCyan', padding: '20px', borderRadius: '10px' }}>
-								<Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
-									<Box>
-										<Typography variant='body1' sx={{ color: 'whiteText' }}>Tip Amount</Typography>
-										<Typography variant='body2' sx={{ fontSize: '18px', color: 'grayishCyan' }}>/ person</Typography>
-									</Box>
-									<Box>
-										<Typography variant='h3' sx={{ fontSize: '32px', color: 'mainAccent' }}>${tipAmount}</Typography>
-									</Box>
-								</Box>
-								<Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
-									<Box>
-										<Typography variant='body1' sx={{ color: 'whiteText' }}>Total</Typography>
-										<Typography variant='body2' sx={{ fontSize: '18px', color: 'grayishCyan' }}>/ person</Typography>
-									</Box>
-									<Box>
-										<Typography variant='h3' sx={{ fontSize: '32px', color: 'mainAccent' }}>${total}</Typography>
-									</Box>
-								</Box>
-								<Button
-									variant='contained'
-									sx={{ backgroundColor: 'mainAccent', color: 'darkCyan' }}
-									fullWidth
-									onClick={ () => handleReset() }>
-									RESET
-								</Button>
-							</Box>
-						</Grid>
+								<Grid item xs={12} sm={12} md={6}>
+
+									<Grid container direction='column' wrap='nowrap' rowSpacing={4} mt={0} sx={{ backgroundColor: styleGuide.colors.darkCyan, color: styleGuide.colors.lightGrayishCyan, padding: '35px', borderRadius: '20px', height: '100%' }}>
+
+										<Grid item xs={2}>
+											<Grid container justifyContent='space-between' alignItems='center' wrap='nowrap'>
+												<Grid item>
+													<Typography variant='body1'>Tip Amount</Typography>
+													<Typography variant='body2'>/ person</Typography>
+												</Grid>
+												<Grid item>
+													<Typography variant='h3'>${tipAmount}</Typography>
+												</Grid>
+											</Grid>
+										</Grid>
+
+										<Grid item xs={8}>
+											<Grid container justifyContent='space-between'alignItems='center' wrap='nowrap'>
+												<Grid item>
+													<Typography variant='body1'>Total</Typography>
+													<Typography variant='body2'>/ person</Typography>
+												</Grid>
+												<Grid item>
+													<Typography variant='h3'>${total}</Typography>
+												</Grid>
+											</Grid>
+										</Grid>
+
+										<Grid item xs={2}>
+											{
+												bill || tip || people ?
+													<CommonButton title='Reset' isActive onClick={ () => handleReset() } /> :
+													<CommonButton title='Reset' isActive onClick={ () => handleReset() } disabled />
+											}
+										</Grid>
+
+									</Grid>
+
+								</Grid>
+							</Grid>
 
 
+						</Paper>
 					</Grid>
 
-
-					<Grid item>
-						<Snackbar
-							open={showSnackbar}
-							autoHideDuration={6000}
-							anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-							onClose={handleCloseSnackbar}>
-							<Alert
-								onClose={handleCloseSnackbar}
-								severity="success"
-								sx={{ width: '100%' }}>
-							This is a success message!
-							</Alert>
-						</Snackbar>
-					</Grid>
+					<Snackbar
+						open={showSnackbar}
+						autoHideDuration={6000}
+						anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+						onClose={handleCloseSnackbar}>
+						<Alert
+							onClose={handleCloseSnackbar}
+							severity="success"
+							icon={<CheckIcon sx={{ color: styleGuide.colors.main }}/>}
+						>
+							Reset Successful
+						</Alert>
+					</Snackbar>
 
 				</Grid>
 			</Container>
