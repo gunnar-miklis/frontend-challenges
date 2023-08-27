@@ -3,6 +3,7 @@ import '@fontsource/space-mono/700.css';
 import { styleGuide } from './styleGuide';
 
 export const theme = createTheme( {
+
 	components: {
 		MuiContainer: {
 			styleOverrides: {
@@ -67,6 +68,7 @@ export const theme = createTheme( {
 			},
 		},
 	},
+
 	typography: {
 		allVariants: {
 			fontFamily: styleGuide.font.fontFamily,
@@ -93,6 +95,7 @@ export const theme = createTheme( {
 			color: styleGuide.colors.grayishCyan,
 		},
 	},
+
 	palette: {
 		primary: {
 			main: styleGuide.colors.main,
@@ -102,4 +105,5 @@ export const theme = createTheme( {
 			default: styleGuide.colors.lightGrayishCyan,
 		},
 	},
+
 } );
