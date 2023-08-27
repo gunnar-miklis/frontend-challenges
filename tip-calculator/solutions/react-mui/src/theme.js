@@ -64,6 +64,7 @@ export const theme = createTheme( {
 					justifyContent: 'center',
 					backgroundColor: styleGuide.colors.darkCyan,
 					color: styleGuide.colors.lightCyan,
+					boxShadow: '2px 2px 5px rgba(0,0,0,0.5)',
 				},
 			},
 		},

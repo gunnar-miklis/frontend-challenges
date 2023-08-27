@@ -249,7 +249,7 @@ export default function App() {
 						<CheckIcon sx={{ color: styleGuide.colors.main }}/>
 					}
 				>
-							Reset Successful
+				All resetted
 				</Alert>
 			</Snackbar>
 
