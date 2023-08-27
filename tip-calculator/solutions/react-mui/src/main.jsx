@@ -6,10 +6,9 @@ import { theme } from './theme.js';
 
 ReactDOM.createRoot( document.getElementById( 'root' ) ).render(
 	<React.StrictMode>
-		<CssBaseline>
-			<ThemeProvider theme={theme}>
-				<App />
-			</ThemeProvider>
-		</CssBaseline>
+		<ThemeProvider theme={theme}>
+			<CssBaseline />
+			<App />
+		</ThemeProvider>
 	</React.StrictMode>,
 );
