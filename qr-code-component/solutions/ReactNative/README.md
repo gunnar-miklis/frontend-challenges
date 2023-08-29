@@ -1,4 +1,7 @@
-# Setup
+# RESULT
+![Screenshot](Screenshot_20230709-214738.png)
+
+# SETUP
 
 ### initialize app
 ```
@@ -20,6 +23,3 @@ $ npx expo start
 ```
 $ npx expo start --tunnel
 ```
-
-# Result
-![Screenshot](Screenshot_20230709-214738.png)
