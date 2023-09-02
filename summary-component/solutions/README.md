@@ -4,18 +4,18 @@
 + practicing: vite + react
 
 ### setup
-```
+```bash
 $ npm create vite@latest
   or
 $ yarn create vite
 ```
-```
+```bash
 $ npm install
   or
 $ yarn
 ```
 ### start
-```
+```bash
 $ npm run dev
   or
 $ yarn dev

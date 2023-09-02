@@ -38,7 +38,7 @@
 <br/>
 
 # SETUP
-```
+```bash
 $ yarn create vite
 $ cd react-mui/
 
